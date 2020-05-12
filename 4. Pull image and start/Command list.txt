@@ -1,0 +1,13 @@
+sudo su
+docker pull novakvova/myjenkins:latest
+docker images
+docker run --name jenkins-docker -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock novakvova/myjenkins
+
+docker container ls -a
+docker container start jenkins-docker
+
+--Дати доступ поточному користувачеві в лінокс-----
+sudo usermod -a -G docker master
+sudo usermod -a -G docker $USER
+
+sudo docker exec jenkins-docker cat /var/jenkins_home/secrets/initialAdminPassword

@@ -1,0 +1,6 @@
+docker build -t myjenkins .
+docker iamges
+docker tag myjenkins novakvova/myjenkins
+docker images
+docker push novakvova/myjenkins
+
